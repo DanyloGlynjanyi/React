@@ -1,7 +1,9 @@
+import {RaM} from "./Components/RaMComponets/RaM";
+
 const App = () => {
     return (
         <div>
-            App
+            <RaM/>
         </div>
     );
 };
