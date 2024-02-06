@@ -1,9 +1,9 @@
 import {urls} from "../../constans/urls";
-import {jsonServices} from "./jsonServices";
+import {axiosService} from "./axiosServices";
 
 const postServices = {
-    getAll: () => jsonServices.get(urls.posts.base),
-    getById: (id) => jsonServices.get(urls.posts.byId(id))
+    getAll: () => axiosService.get(urls.posts.base),
+    getById: (id) => axiosService.get(urls.posts.byId(id))
 };
 
-export {postServices, jsonServices};
+export {postServices, axiosService};
