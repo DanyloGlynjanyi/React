@@ -1,10 +1,10 @@
 import {spaceXService} from "./spaceXService";
 import {urls} from "../constans/urls";
 
-const launchService = {
+const axiosService = {
     getAll: () => spaceXService.get(urls.launches)
 };
 
 export {
-    launchService
+    axiosService
 };

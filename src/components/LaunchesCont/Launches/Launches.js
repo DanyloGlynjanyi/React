@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-import {launchService} from "../../../services/launchService";
+import {axiosService} from "../../../services/axiosService";
 import {Launch} from "../Launch/Launch";
 import css from './Launches.module.css'
 const Launches = () => {
@@ -8,7 +8,7 @@ const Launches = () => {
 
 
     useEffect(() => {
-        launchService.getAll().then(({data}) => {
+        axiosService.getAll().then(({data}) => {
             let filtered = data.filter(value => value.launch_year !== "2020");
             setLaunches(filtered)
         })
