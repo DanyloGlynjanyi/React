@@ -1,11 +1,20 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {commentService} from "../../services/commentService";
+import {CommentForm} from "./CommentForm";
+import {Comments} from "./Comments";
 
 const CommentsContainer = () => {
-    const [users, setUsers] = useState([])
+    const [comments, setComments] = useState([])
 
+    useEffect(() => {
+        commentService.getAll().then(({data}) => setComments(data))
+    }, [])
 
     return (
-        <div>
+        <div style={{width: '50%'}}>
+            <CommentForm setComments={setComments}/>
+            <hr/>
+            <Comments comments={comments}/>
 
         </div>
     );
