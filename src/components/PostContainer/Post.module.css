@@ -1,0 +1,7 @@
+.Post {
+    font-size: larger;
+    color: white;
+    justify-content: center;
+    display: flex;
+    background-color: purple;
+}

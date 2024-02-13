@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 
 import {postService} from "../../services/postService";
 import {Post} from "./Post";
-
+import css from"./Post.module.css"
 const Posts = () => {
     const {state: {postId}} = useLocation();
     const [post, setPost] = useState(null);
@@ -14,7 +14,7 @@ const Posts = () => {
     }, [postId])
 
     return (
-        <div>
+        <div className={css.Post}>
             {post && <Post post={post}/>}
         </div>
     );
