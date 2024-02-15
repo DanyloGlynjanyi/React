@@ -4,6 +4,8 @@ import {UserPage} from "./pages/UserPage";
 import {userService} from "./services/userService";
 import {UserDetailsPage} from "./pages/UserDetailsPage";
 import {PostPage} from "./pages/PostPage";
+import {PostDetailsPage} from "./pages/PostDetailsPage";
+import {postService} from "./services/postService";
 
 const router = createBrowserRouter([
     {
@@ -14,10 +16,16 @@ const router = createBrowserRouter([
                 path: 'users/:userId', element: <UserDetailsPage/>, children: [
                     {path: 'posts', element: <PostPage/>}
                 ]
+            },
+            {
+                path: 'users/:userId/posts/:postId',
+                element: <PostDetailsPage/>,
+                loader: ({params: {postId}}) => postService.getById(postId),
             }
         ]
     }
-])
+]);
+
 export {
     router
-}
+};
