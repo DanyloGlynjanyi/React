@@ -1,5 +1,3 @@
-import {useNavigate} from "react-router-dom";
-
 const Comment = ({comment}) => {
     const {id, postId, name} = comment;
 
